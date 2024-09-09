@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Lumen Academy</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Registration Section -->
+  <div id="registration" class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg mt-8">
+    <h2 class="text-2xl font-bold mb-4 text-center">Register for the Quiz</h2>
+    <p id="deadline" class="text-center mb-4 text-red-600">Registration Deadline: 30th September 2024</p>
+    <input type="text" id="schoolName" placeholder="School Name" class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <input type="text" id="candidateName" placeholder="Candidate Name" class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <button onclick="registerCandidate()" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Register</button>
+  </div>
+
+  <!-- Quiz Section -->
+  <div id="quiz" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-8 hidden">
+    <div id="quizHeader" class="mb-4 text-center">
+      <!-- Display Academy and Student Name -->
+      <div id="quizAcademyName" class="text-lg font-semibold"></div>
+      <div id="quizStudentName" class="text-lg font-semibold"></div>
+    </div>
+    <h2 class="text-2xl font-bold mb-4 text-center">Quiz Time!</h2>
+    <div id="questionContainer" class="mb-4"></div>
+    <button onclick="submitAnswer()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mb-4">Submit Answer</button>
+    <div id="timer" class="text-center text-lg font-semibold text-red-600"></div>
+  </div>
+
+  <!-- Results Section -->
+  <div id="results" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-8 hidden">
+    <h2 class="text-2xl font-bold mb-4 text-center">Results</h2>
+    <div class="text-center mb-4">
+      <div id="academyName" class="text-lg font-semibold"></div>
+      <div id="studentName" class="text-lg font-semibold"></div>
+    </div>
+    <div id="score" class="text-center text-lg font-bold"></div>
+    <div id="congratulatoryMessage" class="text-center text-green-600 font-semibold mt-4"></div>
+  </div>
+
+  <!-- Modal for Winners -->
+  <div id="winnerModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white rounded-lg p-8 shadow-lg text-center relative">
+      <span class="absolute top-2 right-2 text-gray-500 cursor-pointer" onclick="closeModal()">&times;</span>
+      <h2 class="text-2xl font-bold mb-4">Congratulations!</h2>
+      <p id="winnerMessage" class="text-lg"></p>
+    </div>
+  </div>
+
+  
+    <script src="js/home.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+  
+</html>
